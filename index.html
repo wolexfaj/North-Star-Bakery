@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>North Star Bakery | Home</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+
+  <body>
+    <header>
+      <!-- Logo -->
+      <figure>
+        <img
+          src="./Media/bakery-logo_c.png"
+          alt="North Star Bakery official logo"
+        />
+        <figcaption>North Star</figcaption>
+      </figure>
+
+      <!-- Navigation -->
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./products.html">Products</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Call to Action -->
+      <a class="cta-button" href="./contact.html">ORDER NOW</a>
+    </header>
+
+    <main>
+      <!-- Welcome -->
+      <section class="welcome">
+        <h1>Welcome to North Star Bakery</h1>
+
+        <p>Simply delicious from the first bite to the last crumb!</p>
+
+        <audio controls>
+          <source src="./Media/bakery-welcome_c.mp3" type="audio/mpeg" />
+          Welcome to North Star Bakery! We pride ourselves in giving you the
+          best pastries.
+        </audio>
+      </section>
+
+      <!-- Location -->
+      <section class="location">
+        <h2>Come in for a Bite</h2>
+
+        <p>
+          North Star Bakery is a neighborhood bakery focused on fresh, delicious
+          baked goods and friendly service. We prepare breads, pastries, and
+          other treats for our local customers.
+        </p>
+
+        <ul>
+          <li>Location: Lorem ipsum dolor sit, amet</li>
+          <li>Weekdays: Monday to Saturday</li>
+          <li>Hours: 8 AM to 8 PM</li>
+        </ul>
+      </section>
+
+      <!-- Featured Product -->
+      <section class="featuredItem">
+        <h2>Check Out Our Varieties for This Week</h2>
+
+        <figure>
+          <picture>
+            <!-- Large screens -->
+            <source
+              media="(min-width: 800px)"
+              srcset="./Media/bakery-feature-large_c.png"
+            />
+
+            <!-- Medium screens -->
+            <source
+              media="(min-width: 450px)"
+              srcset="./Media/bakery-feature-small_c.png"
+            />
+
+            <!-- Small screens / fallback -->
+            <img
+              src="./Media/bakery-feature-small_c.png"
+              alt="Sweet brown Signature Loaf of bread"
+            />
+          </picture>
+
+          <figcaption>Our Signature Loaf</figcaption>
+        </figure>
+
+        <p class="center">
+          Our Signature Loaf is one of our featured bakery products, made with
+          care for a rich flavor and satisfying bite.
+        </p>
+      </section>
+
+      <!-- Request Form -->
+      <section class="request-form">
+        <h2>Place a Request</h2>
+
+        <p>
+          Complete the form below and we'll get back to you with the details.
+        </p>
+
+        <form action="#" method="post">
+          <fieldset>
+            <legend>Customer Information</legend>
+
+            <div>
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+
+            <div>
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Request Details</legend>
+
+            <div>
+              <label for="pickup-date">Pickup Date:</label>
+              <input type="date" id="pickup-date" name="pickup-date" required />
+            </div>
+
+            <div>
+              <label for="request-type">Request Type:</label>
+              <select id="request-type" name="request-type" required>
+                <option value="">-- Please choose an option --</option>
+                <option value="pre-order">Pre-order</option>
+                <option value="general-question">General Question</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="item-details">Item Details:</label>
+              <textarea
+                id="item-details"
+                name="item-details"
+                rows="5"
+                placeholder="Tell us what you'd like to order or ask about."
+                required
+              ></textarea>
+            </div>
+
+            <div>
+              <label for="allergy-notes">
+                Allergy Notes (if applicable):
+              </label>
+
+              <textarea
+                id="allergy-notes"
+                name="allergy-notes"
+                rows="4"
+                placeholder="Please let us know about any allergies or dietary concerns."
+              ></textarea>
+            </div>
+          </fieldset>
+
+          <button type="submit">Submit Request</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>Tasty products you can trust!</p>
+    </footer>
+  </body>
+</html>

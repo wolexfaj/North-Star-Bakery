@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us | North Star Bakery</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+
+  <body>
+    <header>
+      <!-- Logo -->
+      <figure>
+        <img src="./Media/bakery-logo_c.png" alt="North Star Bakery logo" />
+        <figcaption>North Star Bakery</figcaption>
+      </figure>
+
+      <!-- Navigation -->
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./products.html">Products</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Call to Action -->
+      <a class="cta-button" href="./contact.html">ORDER NOW</a>
+    </header>
+
+    <main>
+      <!-- Contact Introduction -->
+      <section class="contact-intro">
+        <h1>Contact North Star Bakery</h1>
+
+        <p>
+          Have a question or would like to place a pre-order? Complete the form
+          below and our team will get back to you.
+        </p>
+      </section>
+
+      <!-- Inquiry and Pre-order Form -->
+      <section class="contact-form">
+        <h2>Inquiry &amp; Pre-Order Request</h2>
+
+        <p>
+          Contact us with a question or submit a request for a bakery pre-order.
+        </p>
+
+        <form action="#" method="post">
+          <fieldset>
+            <legend>Customer Information</legend>
+
+            <div>
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+
+            <div>
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+
+            <div>
+              <label for="phone">Phone:</label>
+              <input type="tel" id="phone" name="phone" required />
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Request Details</legend>
+
+            <div>
+              <label for="request-type">Request Type:</label>
+
+              <select id="request-type" name="request-type" required>
+                <option value="">-- Please choose an option --</option>
+                <option value="pre-order">Pre-order</option>
+                <option value="general-question">General Question</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="pickup-date">Pickup Date:</label>
+
+              <input type="date" id="pickup-date" name="pickup-date" required />
+            </div>
+
+            <div>
+              <label for="item-details">Item Details:</label>
+
+              <textarea
+                id="item-details"
+                name="item-details"
+                rows="5"
+                placeholder="Tell us what you would like to order or ask about."
+                required
+              ></textarea>
+            </div>
+
+            <div>
+              <label for="allergy-notes">
+                Allergy Notes (if applicable):
+              </label>
+
+              <textarea
+                id="allergy-notes"
+                name="allergy-notes"
+                rows="4"
+                placeholder="Please let us know about any allergies or dietary concerns."
+              ></textarea>
+            </div>
+          </fieldset>
+
+          <button type="submit">Submit Request</button>
+        </form>
+      </section>
+
+      <!-- Location -->
+      <section class="location">
+        <h2>Visit Us</h2>
+
+        <p>
+          We welcome walk-in customers and pre-order pickups during our regular
+          business hours.
+        </p>
+        <address>
+          North Star Bakery<br />
+          Lorem ipsum Street<br />
+        </address>
+      </section>
+
+      <!-- Hours -->
+      <section class="hours">
+        <h2>Hours of Operation</h2>
+
+        <ul>
+          <li>Monday - Saturday: 8:00 AM - 8:00 PM</li>
+          <li>Sunday: Closed</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>Tasty products you can trust!</p>
+    </footer>
+  </body>
+</html>
