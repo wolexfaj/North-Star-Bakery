@@ -342,6 +342,44 @@ textarea:focus {
   text-align: center;
 }
 
+/* Form validation messages */
+.error-message {
+  color: #b00020;
+  font-size: 0.9rem;
+  margin: 5px 0 0;
+  min-height: 1.2em;
+}
+
+/* Success message */
+.success-message {
+  color: #176b2c;
+  font-weight: bold;
+  margin-top: 15px;
+  min-height: 1.2em;
+}
+
+/* Highlight fields when the browser identifies them as invalid */
+input:invalid,
+select:invalid,
+textarea:invalid {
+  border: 2px solid #b00020;
+}
+
+/* Keep the fields neutral when they are valid */
+input:valid,
+select:valid,
+textarea:valid {
+  border: 1px solid #777;
+}
+
+/* Improve focus visibility for keyboard users */
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid #333;
+  outline-offset: 2px;
+}
+
 /* ---------- Footer ---------- */
 
 footer {
