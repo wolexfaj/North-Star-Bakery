@@ -14,7 +14,7 @@
       <!-- Logo -->
       <figure>
         <img src="./Media/bakery-logo_c.png" alt="North Star Bakery logo" />
-        <figcaption>North Star</figcaption>
+        <figcaption>North Star Bakery</figcaption>
       </figure>
 
       <!-- Navigation -->
@@ -50,6 +50,20 @@
         </figure>
       </section>
 
+      <section class="product-filter">
+        <h2>Find a Product</h2>
+
+        <label for="product-filter">Choose a category:</label>
+        <select id="product-filter">
+          <option value="all">All Products</option>
+          <option value="bread">Breads</option>
+          <option value="pastry">Pastries</option>
+          <option value="cake">Cakes</option>
+        </select>
+
+        <p id="filter-result">Showing all products.</p>
+      </section>
+
       <!-- Breads -->
       <section class="product-category breads">
         <h2>Breads</h2>
@@ -59,7 +73,7 @@
           perfect for breakfast, sandwiches, or enjoying on their own.
         </p>
 
-        <div class="product">
+        <div class="product" data-category="bread">
           <figure>
             <img
               src="./Media/bakery-bread_c.png"
@@ -78,7 +92,7 @@
           <p><strong>Price range:</strong> $5 - $10</p>
         </div>
 
-        <div class="product">
+        <div class="product" data-category="bread">
           <figure>
             <img
               src="./Media/bakery-signature-loaf_c.png"
@@ -107,7 +121,7 @@
           morning drink or as a sweet afternoon snack.
         </p>
 
-        <div class="product">
+        <div class="product" data-category="pastry">
           <figure>
             <picture>
               <!-- Large screens -->
@@ -142,7 +156,7 @@
           <p><strong>Price range:</strong> $3 - $7</p>
         </div>
 
-        <div class="product">
+        <div class="product" data-category="pastry">
           <figure>
             <picture>
               <!-- Large screens -->
@@ -186,7 +200,7 @@
           other special occasions.
         </p>
 
-        <div class="product">
+        <div class="product" data-category="cake">
           <figure>
             <picture>
               <!-- Large screens -->
@@ -221,7 +235,7 @@
           <p><strong>Price range:</strong> $25 - $75</p>
         </div>
 
-        <div class="product">
+        <div class="product" data-category="cake">
           <figure>
             <picture>
               <!-- Large screens -->
@@ -278,5 +292,6 @@
     <footer>
       <p>Tasty products you can trust!</p>
     </footer>
+    <script src="./js/products.js"></script>
   </body>
 </html>
