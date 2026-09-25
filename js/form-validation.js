@@ -15,94 +15,135 @@ const requestTypeError = document.getElementById("request-type-error");
 const itemDetailsError = document.getElementById("item-details-error");
 const formSuccess = document.getElementById("form-success");
 
+// ------------------------------
+// FORM VALIDATION
+// ------------------------------
+
 // Check that a required field is not empty
 function validateRequired(input, errorElement, fieldName) {
-  if (input.value.trim() === "") {
-    errorElement.textContent = `${fieldName} is required.`;
-    return false;
-  }
+    if (input.value.trim() === "") {
+        errorElement.textContent = `${fieldName} is required.`;
+        return false;
+    }
 
-  errorElement.textContent = "";
-  return true;
+    errorElement.textContent = "";
+    return true;
 }
 
 // Check that the email has a valid format
 function validateEmail() {
-  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-  if (emailInput.value.trim() === "") {
-    emailError.textContent = "Email is required.";
-    return false;
-  }
+    if (emailInput.value.trim() === "") {
+        emailError.textContent = "Email is required.";
+        return false;
+    }
 
-  if (!emailPattern.test(emailInput.value.trim())) {
-    emailError.textContent = "Please enter a valid email address.";
-    return false;
-  }
+    if (!emailPattern.test(emailInput.value.trim())) {
+        emailError.textContent =
+            "Please enter a valid email address.";
+        return false;
+    }
 
-  emailError.textContent = "";
-  return true;
+    emailError.textContent = "";
+    return true;
 }
 
 // Check that the item details contain enough information
 function validateItemDetails() {
-  const details = itemDetailsInput.value.trim();
+    const details = itemDetailsInput.value.trim();
 
-  if (details === "") {
-    itemDetailsError.textContent = "Please enter your item details.";
-    return false;
-  }
+    if (details === "") {
+        itemDetailsError.textContent =
+            "Please enter your item details.";
+        return false;
+    }
 
-  if (details.length < 10) {
-    itemDetailsError.textContent = "Please enter at least 10 characters.";
-    return false;
-  }
+    if (details.length < 10) {
+        itemDetailsError.textContent =
+            "Please enter at least 10 characters.";
+        return false;
+    }
 
-  itemDetailsError.textContent = "";
-  return true;
+    itemDetailsError.textContent = "";
+    return true;
 }
 
-// Validate the entire form when the user submits it
+// Validate the entire form
 function validateForm(event) {
-  event.preventDefault();
+    event.preventDefault();
 
-  // Clear the previous success message
-  formSuccess.textContent = "";
+    formSuccess.textContent = "";
 
-  const validName = validateRequired(nameInput, nameError, "Name");
+    const validName = validateRequired(
+        nameInput,
+        nameError,
+        "Name"
+    );
 
-  const validEmail = validateEmail();
+    const validEmail = validateEmail();
 
-  const validPickupDate = validateRequired(
-    pickupDateInput,
-    pickupDateError,
-    "Pickup date",
-  );
+    const validPickupDate = validateRequired(
+        pickupDateInput,
+        pickupDateError,
+        "Pickup date"
+    );
 
-  const validRequestType = validateRequired(
-    requestTypeInput,
-    requestTypeError,
-    "Request type",
-  );
+    const validRequestType = validateRequired(
+        requestTypeInput,
+        requestTypeError,
+        "Request type"
+    );
 
-  const validItemDetails = validateItemDetails();
+    const validItemDetails = validateItemDetails();
 
-  // Stop the form from submitting if any field is invalid
-  if (
-    !validName ||
-    !validEmail ||
-    !validPickupDate ||
-    !validRequestType ||
-    !validItemDetails
-  ) {
-    return;
-  }
+    if (
+        !validName ||
+        !validEmail ||
+        !validPickupDate ||
+        !validRequestType ||
+        !validItemDetails
+    ) {
+        return;
+    }
 
-  // Display a confirmation when all validation passes
-  formSuccess.textContent = "Your request is ready to be submitted.";
-
-  // In a real website, the form could now be sent to a server.
+    formSuccess.textContent =
+        "Your request is ready to be submitted.";
 }
 
-// Run validation when the form is submitted
+
+// ------------------------------
+// BROWSER STORAGE
+// ------------------------------
+
+// Save the selected request type
+function saveRequestType() {
+    localStorage.setItem(
+        "northStarRequestType",
+        requestTypeInput.value
+    );
+}
+
+// Load the previously selected request type
+function loadRequestType() {
+    const savedRequestType =
+        localStorage.getItem("northStarRequestType");
+
+    if (savedRequestType) {
+        requestTypeInput.value = savedRequestType;
+    }
+}
+
+
+// ------------------------------
+// EVENT LISTENERS
+// ------------------------------
+
+// Save the request type whenever the user changes it
+requestTypeInput.addEventListener("change", saveRequestType);
+
+// Validate the form when it is submitted
 form.addEventListener("submit", validateForm);
+
+// Load the saved selection when the page opens
+loadRequestType();
