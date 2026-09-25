@@ -338,7 +338,7 @@ textarea:focus {
 .hours-list {
   padding-left: 1.25rem;
 }
-.request-form p {
+.request-form > p {
   text-align: center;
 }
 
